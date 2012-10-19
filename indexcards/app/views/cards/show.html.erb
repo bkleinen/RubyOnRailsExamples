@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
-
+<h1>An Indexcard!</h1>
 <p>
   <b>Title:</b>
   <%= @card.title %>
 </p>
-
+<hr>
+<hr>
 <p>
   <b>Front:</b>
   <%= @card.front %>
 </p>
 
+<% if @answer %>
 <p>
-  <b>Back:</b>
-  <%= @card.back %>
+  <b>Answer:</b>
+  <%= @answer %>
 </p>
+<p>
+<%= link_to 'Hide Answer', card_path(@card,show_answer: false)  %>	
+</p>
+<% else %>
+<p>
+<%= link_to 'Show Answer', card_path(@card,show_answer: true)  %>	
+</p>
+
+<% end %>
 
 
 <%= link_to 'Edit', edit_card_path(@card) %> |

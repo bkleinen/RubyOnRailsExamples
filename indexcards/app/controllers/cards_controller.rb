@@ -14,7 +14,9 @@ class CardsController < ApplicationController
   # GET /cards/1.json
   def show
     @card = Card.find(params[:id])
-
+    if params['show_answer'] == "true"
+      @answer =  @card.back
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @card }

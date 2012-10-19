@@ -28,6 +28,6 @@ bei großen Konflikten:
 rebase 
 (dabei werden eigene commits gestashed)
 eigene commits zurückbekommen:
-
+http://lilypond.org/doc/v2.15/Documentation/contributor/pulling-and-rebasing
 
 
