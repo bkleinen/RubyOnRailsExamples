@@ -1,0 +1,32 @@
+<h1>All things</h1>
+
+<%= form_tag things_path, :method => 'get' do %>
+    <p>
+      <%= search_field_tag :search %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @things.each do |thing| %>
+  <tr>
+    <td><%= thing.name %></td>
+    <td><%= thing.description %></td>
+    <td><%= link_to 'Show', thing %></td>
+    <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+    <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Thing', new_thing_path %>
